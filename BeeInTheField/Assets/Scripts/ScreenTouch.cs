@@ -20,7 +20,5 @@ public class ScreenTouch : MonoBehaviour
         mousePositionOnScreen = Input.mousePosition;
 
         Debug.Log(mousePositionOnScreen);
-
-
     }
 }
