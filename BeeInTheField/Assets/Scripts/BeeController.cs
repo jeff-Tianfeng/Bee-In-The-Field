@@ -7,6 +7,7 @@ public class BeeController : MonoBehaviour
 
     public GameObject obj;
     private Vector3 pos;
+    public Vector3 posOnScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class BeeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Object:" + Camera.main.WorldToScreenPoint(pos));
+        posOnScreen = Camera.main.WorldToScreenPoint(pos);
     }
 
     private Vector3 generatePosition(){
@@ -28,5 +29,10 @@ public class BeeController : MonoBehaviour
         float z = (float) System.Math.Sqrt((4-(pos.x)*(pos.x)));
         pos.z = z;
         return pos;
+    }
+
+    public Vector3 returnScreenPosition(){
+
+        return posOnScreen;
     }
 }
