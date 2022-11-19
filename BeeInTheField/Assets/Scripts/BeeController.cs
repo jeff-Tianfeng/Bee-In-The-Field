@@ -8,12 +8,13 @@ public class BeeController : MonoBehaviour
     public GameObject obj;
     private Vector3 pos;
     public Vector3 posOnScreen;
+    GameObject instance;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        GameObject instance = (GameObject)Instantiate(obj, generatePosition(), transform.rotation);
+        instance = (GameObject)Instantiate(obj, generatePosition(), transform.rotation);
     }
 
     // Update is called once per frame
@@ -34,5 +35,13 @@ public class BeeController : MonoBehaviour
     public Vector3 returnScreenPosition(){
 
         return posOnScreen;
+    }
+
+    public void destroyObject(){
+        GameObject.Destroy(instance);
+    }
+
+    public void generateNewObject(){
+        instance = (GameObject)Instantiate(obj, generatePosition(), transform.rotation);
     }
 }

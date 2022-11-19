@@ -25,6 +25,8 @@ public class ScreenTouch : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             print("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen);
+            beeController.destroyObject();
+            beeController.generateNewObject();
         }
     }
 
