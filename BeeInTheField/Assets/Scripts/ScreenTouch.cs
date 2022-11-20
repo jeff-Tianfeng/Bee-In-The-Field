@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ScreenTouch : MonoBehaviour
 
@@ -10,11 +11,11 @@ public class ScreenTouch : MonoBehaviour
 
     public BeeController beeController;
 
-    Vector3 mousePositionOnScreen;//moust position
-    // Start is called before the first frame update
+    private Vector3 mousePositionOnScreen;//moust position
+
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -22,11 +23,19 @@ public class ScreenTouch : MonoBehaviour
     {
         //get the moust position
         mousePositionOnScreen = Input.mousePosition;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))//when left click the mouse.
         {
-            print("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen);
+        
             beeController.destroyObject();
             beeController.generateNewObject();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit rayhit;
+            if (Physics.Raycast(ray, out rayhit))
+            {   
+                Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + rayhit.collider.gameObject.name);
+            }else{
+               Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + "Nothing");
+            }
         }
     }
 

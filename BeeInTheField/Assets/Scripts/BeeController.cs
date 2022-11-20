@@ -7,22 +7,22 @@ public class BeeController : MonoBehaviour
 
     public GameObject obj;
     private Vector3 pos;
-    public Vector3 posOnScreen;
-    GameObject instance;
+    private Vector3 posOnScreen;
+    private GameObject instance;
 
-    // Start is called before the first frame update
     void Start()
     {
 
         instance = (GameObject)Instantiate(obj, generatePosition(), transform.rotation);
     }
 
-    // Update is called once per frame
     void Update()
     {
         posOnScreen = Camera.main.WorldToScreenPoint(pos);
     }
-
+    
+    ///<summary>Generate a random position on the boundary of a circle, 
+    ///the center of the circle is the camera position(0,0,0)<summary>
     private Vector3 generatePosition(){
         pos = transform.position;
         pos.x = Random.Range(-2,2);
