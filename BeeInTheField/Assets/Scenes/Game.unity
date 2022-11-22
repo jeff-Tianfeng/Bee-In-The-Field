@@ -247,7 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 5293586310555388915, guid: 54fb388ddb9544e42874ef91306fa61d, type: 3}
-  posOnScreen: {x: 0, y: 0, z: 0}
 --- !u!4 &797223582
 Transform:
   m_ObjectHideFlags: 0

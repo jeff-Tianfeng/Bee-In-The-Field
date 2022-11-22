@@ -21,5 +21,18 @@ public class ViewRotate : MonoBehaviour
             {
                 mainCamera.transform.Rotate(0, Input.GetAxis("Horizontal") * _speed * Time.deltaTime, 0, Space.Self);
             }
+
+        if (Input.GetKeyDown (KeyCode.UpArrow)) {
+            print("DOWN");
+		}
+        if (Input.GetKeyDown (KeyCode.DownArrow)) {
+		
+		}
+        if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+		
+		}
+        if (Input.GetKeyDown (KeyCode.RightArrow)) {
+		
+		}
     }
 }
