@@ -17,9 +17,23 @@ public class ViewRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Horizontal") != 0)
-            {
+        if(mainCamera.transform.rotation.y >= -0.7f && mainCamera.transform.rotation.y <= 0.7f ){
+            if(Input.GetKey(KeyCode.LeftArrow)){
                 mainCamera.transform.Rotate(0, Input.GetAxis("Horizontal") * _speed * Time.deltaTime, 0, Space.Self);
             }
+
+            if(Input.GetKey(KeyCode.RightArrow)){
+                mainCamera.transform.Rotate(0, Input.GetAxis("Horizontal") * _speed * Time.deltaTime, 0, Space.Self);
+            }
+
+        }else if (mainCamera.transform.rotation.y < -0.7f){
+            if(Input.GetKey(KeyCode.RightArrow)){
+                mainCamera.transform.Rotate(0, Input.GetAxis("Horizontal") * _speed * Time.deltaTime, 0, Space.Self);
+            }
+        }else if(mainCamera.transform.rotation.y > 0.7f){
+            if(Input.GetKey(KeyCode.LeftArrow)){
+                mainCamera.transform.Rotate(0, Input.GetAxis("Horizontal") * _speed * Time.deltaTime, 0, Space.Self);
+            }
+        }
     }
 }
