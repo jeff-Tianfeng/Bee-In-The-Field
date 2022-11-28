@@ -9,6 +9,15 @@ public class BeeController : MonoBehaviour
     private Vector3 pos;
     private Vector3 posOnScreen;
     private GameObject instance;
+    private Vector3 pos1 = new Vector3 (0,0,2.5f);
+    private Vector3 pos2 = new Vector3 (1.77f,0,1.77f);
+    private Vector3 pos3 = new Vector3 (-1.77f,0,1.77f);
+
+    private Vector3 pos4 = new Vector3 (-2.5f,0,0);
+    private Vector3 pos5 = new Vector3 (-1.77f,0,-1.5f);
+
+    private Vector3 pos6 = new Vector3 (2.5f,0,0);
+    private Vector3 pos7 = new Vector3 (1.77f,0,-1.5f);
 
     void Start()
     {
@@ -24,11 +33,11 @@ public class BeeController : MonoBehaviour
     ///<summary>Generate a random position on the boundary of a circle, 
     ///the center of the circle is the camera position(0,0,0)<summary>
     private Vector3 generatePosition(){
-        pos = transform.position;
-        pos.x = Random.Range(-2,2);
-        pos.y = Random.Range(1,1);
-        float z = (float) System.Math.Sqrt((4-(pos.x)*(pos.x)));
-        pos.z = z;
+        int a = Random.Range(1, 7);
+        Vector3[] poslist = new Vector3[7];
+        poslist[0] = pos1; poslist[1] = pos2; poslist[2] = pos3; poslist[3] = pos4;
+        poslist[4] = pos5; poslist[5] = pos6; poslist[6] = pos7;
+        pos = poslist[a];
         return pos;
     }
 
