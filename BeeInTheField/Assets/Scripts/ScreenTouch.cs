@@ -25,9 +25,7 @@ public class ScreenTouch : MonoBehaviour
         mousePositionOnScreen = Input.mousePosition;
         if (Input.GetMouseButtonDown(0))//when left click the mouse.
         {
-        
-            beeController.destroyObject();
-            beeController.generateNewObject();
+            beeController.beePompUp();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayhit;
             if (Physics.Raycast(ray, out rayhit))

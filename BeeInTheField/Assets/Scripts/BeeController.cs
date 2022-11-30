@@ -9,6 +9,9 @@ public class BeeController : MonoBehaviour
     private Vector3 pos;
     private Vector3 posOnScreen;
     private GameObject instance;
+    private float Speed=0.5f;
+    private bool isClicked = false;
+    private Vector3 newPos = new Vector3(0,0,0);
     private Vector3 pos1 = new Vector3 (0,0,2.5f);
     private Vector3 pos2 = new Vector3 (1.77f,0,1.77f);
     private Vector3 pos3 = new Vector3 (-1.77f,0,1.77f);
@@ -28,6 +31,14 @@ public class BeeController : MonoBehaviour
     void Update()
     {
         posOnScreen = Camera.main.WorldToScreenPoint(pos);
+        if(isClicked){
+            instance.transform.localPosition = Vector3.MoveTowards(instance.transform.localPosition, newPos, Speed*Time.deltaTime);
+            if(instance.transform.position == newPos){
+                isClicked = false;
+                destroyObject();
+                generateNewObject();
+            }
+        }
     }
     
     ///<summary>Generate a random position on the boundary of a circle, 
@@ -42,12 +53,18 @@ public class BeeController : MonoBehaviour
     }
 
     public Vector3 returnScreenPosition(){
-
         return posOnScreen;
     }
 
     public void destroyObject(){
         GameObject.Destroy(instance);
+    }
+
+    public void beePompUp(){
+        
+        newPos = new Vector3(pos.x, pos.y+2, pos.z);
+        isClicked = true;
+
     }
 
     public void generateNewObject(){
