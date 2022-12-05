@@ -11,7 +11,9 @@ public class ScreenTouch : MonoBehaviour
 
     public BeeController beeController;
 
-    private Vector3 mousePositionOnScreen;//moust position
+    private Vector3 mousePositionOnScreen;//mouse position
+
+    private static int score = 0;
 
     void Start()
     {
@@ -31,10 +33,15 @@ public class ScreenTouch : MonoBehaviour
             if (Physics.Raycast(ray, out rayhit))
             {   
                 Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + rayhit.collider.gameObject.name);
+                score = score + 1;
             }else{
                Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + "Nothing");
             }
         }
+    }
+
+    public static int returnScore(){
+        return score;
     }
 
 

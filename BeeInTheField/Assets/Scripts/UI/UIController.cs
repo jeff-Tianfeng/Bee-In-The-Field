@@ -13,18 +13,22 @@ public class UIController : MonoBehaviour
     private float intervaletime=1;
     private Text text;
     private Text time;
+    private Text score;
     // Start is called before the first frame update
     void Start()
     {
         instance = (GameObject)Instantiate(obj);
         text = GameObject.Find("Canvas/Text").GetComponent<Text>();
-        time = GameObject.Find("Canvas/Time").GetComponent<Text>();
+        time = GameObject.Find("Canvas/Time").GetComponent<Text>(); 
+        score = GameObject.Find("Canvas/Score").GetComponent<Text>();
         time.text = string.Format("{0:00}:{1:00}", (int)gameTime / 60, (float)gameTime % 60);
+        score.text = "0";
         t1 = Time.fixedTime;
     }
     void Update()
     {
         TimeCountDown();
+        score.text = ScreenTouch.returnScore().ToString();
         t2 = Time.fixedTime;
           if(t2 - t1 >=4)
         {
