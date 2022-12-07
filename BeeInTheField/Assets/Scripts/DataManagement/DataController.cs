@@ -9,13 +9,16 @@ using System.IO;
 public class PlayerPerformanceData
 {
     public string NickName;
-    public int Age;
-    public float[] Deviation;
+    public string Age;
+    public bool[] Deviation;
     public int Score;
 }
 
 public class DataController : MonoBehaviour
 {
+    public DataCollector dataCollertor;
+    private float t1;
+    private float t2;
     string JsonPath; //json文件的路径
     PlayerPerformanceData playerPerformance;//要存起来的对象
     //PlayerPerformanceData dayrangeMessagetemp;//要读取出来的对象
@@ -23,23 +26,27 @@ public class DataController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        JsonPath = Application.streamingAssetsPath + "/JsonTest.json";
-        InitJsonData();
-        SaveJson();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+         t2 = Time.fixedTime;
+          if(t2 - t1 >=4)
+        {
+            JsonPath = Application.streamingAssetsPath + "/JsonTest.json";
+            InitJsonData();
+            SaveJson();
+        }
     }
 
      void InitJsonData()
     {
         playerPerformance = new PlayerPerformanceData();
-        playerPerformance.NickName = "Jeff";
-        playerPerformance.Age = 20;
-        playerPerformance.Score = 10;
+        playerPerformance.NickName = dataCollertor.returnName();
+        playerPerformance.Age = dataCollertor.returnAge();
+        playerPerformance.Deviation = dataCollertor.returnDeviation();
     }
 
     public void SaveJson()

@@ -6,13 +6,25 @@ using UnityEngine.UI;
 
 public class InstructionController : MonoBehaviour
 {
+    public DataCollector dataCollector;
     private string player = "";
+    private string playerAge;
     public InputField name;
+    public InputField age;
 
     public void LoadGameScene(){
         player = name.text;
-        print(player);
+        playerAge = age.text;
         SceneManager.LoadScene(1);
+        dataCollector.record();
+    }
+
+    public string returnName(){
+        return player;
+    }
+
+    public string retrunAge(){
+        return playerAge;
     }
 
 }

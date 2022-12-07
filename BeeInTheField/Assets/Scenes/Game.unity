@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53974045}
-  - component: {fileID: 53974046}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -154,18 +153,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &53974046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53974044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bb18e544ae84846bc67b29e7e95136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +301,8 @@ GameObject:
   - component: {fileID: 797223582}
   - component: {fileID: 797223581}
   - component: {fileID: 797223583}
+  - component: {fileID: 797223584}
+  - component: {fileID: 797223585}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -361,6 +350,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beeController: {fileID: 797223581}
+--- !u!114 &797223584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797223580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d053873ea9b46fd80bd0f8c0ef0867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionController: {fileID: 0}
+  screenTouch: {fileID: 797223583}
+--- !u!114 &797223585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797223580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bb18e544ae84846bc67b29e7e95136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCollertor: {fileID: 797223584}
 --- !u!1 &822758026
 GameObject:
   m_ObjectHideFlags: 0

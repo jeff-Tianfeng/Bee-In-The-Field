@@ -11,9 +11,15 @@ public class ScreenTouch : MonoBehaviour
 
     public BeeController beeController;
 
+    private int collectTime1 = 0;
+
     private Vector3 mousePositionOnScreen;//mouse position
 
     private static int score = 0;
+
+    private int countInterval = 50;
+
+    private bool[] DeviationSet = new bool[10];
 
     void Start()
     {
@@ -33,15 +39,23 @@ public class ScreenTouch : MonoBehaviour
             if (Physics.Raycast(ray, out rayhit))
             {   
                 Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + rayhit.collider.gameObject.name);
+                DeviationSet[collectTime1] = true;
+                collectTime1 = collectTime1 + 1;
                 score = score + 1;
             }else{
-               Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + "Nothing");
+                Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + "Nothing");
+                DeviationSet[collectTime1] = false;
+                collectTime1 = collectTime1 + 1;
             }
         }
     }
 
     public static int returnScore(){
         return score;
+    }
+
+    public bool[] returnDeviation(){
+        return DeviationSet;
     }
 
 
