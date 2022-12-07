@@ -123,6 +123,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &53974044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53974045}
+  - component: {fileID: 53974046}
+  m_Layer: 0
+  m_Name: Grass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &53974045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53974044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.9218326, y: 8.508598, z: -11.646437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53974046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53974044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bb18e544ae84846bc67b29e7e95136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 733716671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.77, y: 0, z: -1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -259,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17385e0b4e28048529a59775d02c3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 4940688170342567905, guid: 754345615e61d46c7943270940df9671, type: 3}
+  obj: {fileID: 100000, guid: 821158ae724ce854e920539f935295b8, type: 3}
 --- !u!1 &797223580
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f719b1b920e432a8ecdc5136ad8509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 5293586310555388915, guid: 54fb388ddb9544e42874ef91306fa61d, type: 3}
+  obj: {fileID: 1046869630431942, guid: c717f817a496cf247a92b830b355a407, type: 3}
 --- !u!4 &797223582
 Transform:
   m_ObjectHideFlags: 0
@@ -669,7 +712,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cc758811a5c4c4eb9af40b6370752811, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
