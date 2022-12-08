@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1046869630431942, guid: c717f817a496cf247a92b830b355a407, type: 3}
+  audioSource: {fileID: 7818661974019148749, guid: 8d4d0fc1b9290487792108c4469c00cf, type: 3}
 --- !u!4 &797223582
 Transform:
   m_ObjectHideFlags: 0

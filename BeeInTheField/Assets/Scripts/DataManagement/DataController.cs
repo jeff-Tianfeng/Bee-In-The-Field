@@ -12,6 +12,7 @@ public class PlayerPerformanceData
     public string Age;
     public bool[] Deviation;
     public int Score;
+    public int ClickTime;
 }
 
 public class DataController : MonoBehaviour
@@ -19,6 +20,7 @@ public class DataController : MonoBehaviour
     public DataCollector dataCollertor;
     private float t1;
     private float t2;
+    private int totalTime = 11;
     string JsonPath; //json文件的路径
     PlayerPerformanceData playerPerformance;//要存起来的对象
     //PlayerPerformanceData dayrangeMessagetemp;//要读取出来的对象
@@ -33,7 +35,7 @@ public class DataController : MonoBehaviour
     void Update()
     {
          t2 = Time.fixedTime;
-          if(t2 - t1 >=4)
+          if(t2 - t1 >=totalTime - 1)
         {
             JsonPath = Application.streamingAssetsPath + "/JsonTest.json";
             InitJsonData();
@@ -47,11 +49,13 @@ public class DataController : MonoBehaviour
         playerPerformance.NickName = dataCollertor.returnName();
         playerPerformance.Age = dataCollertor.returnAge();
         playerPerformance.Deviation = dataCollertor.returnDeviation();
+        playerPerformance.ClickTime = dataCollertor.returnClickTime();
+        playerPerformance.Score = dataCollertor.returnScore();
     }
 
     public void SaveJson()
     {
-        //如果本地没有对应的json 文件，重新创建
+        //if there's no json file in local storage, then create a new file
         string json = JsonUtility.ToJson(playerPerformance, true);
         using (StreamWriter sw = new StreamWriter(JsonPath)){
             sw.WriteLine(json);

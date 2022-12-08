@@ -9,6 +9,8 @@ public class DataCollector : MonoBehaviour
     private string NickName;
     private string Age;
     private bool[] deviation;
+    private int score;
+    private int clickTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +20,14 @@ public class DataCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        clickTime = screenTouch.returnClickTime();
         deviation = screenTouch.returnDeviation();
+        score = ScreenTouch.returnScore();
     }
 
     public void record(){
         PlayerPrefs.SetString("NickName", instructionController.returnName());
         PlayerPrefs.SetString("Age", instructionController.retrunAge());
-        //print(NickName + Age);
     }
 
     public string returnName(){
@@ -37,5 +40,13 @@ public class DataCollector : MonoBehaviour
 
     public bool[] returnDeviation(){
         return deviation;
+    }
+
+    public int returnClickTime(){
+        return clickTime;
+    }
+
+    public int returnScore(){
+        return score;
     }
 }

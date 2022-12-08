@@ -21,6 +21,8 @@ public class ScreenTouch : MonoBehaviour
 
     private bool[] DeviationSet = new bool[10];
 
+    private int clickTime = 0;
+
     void Start()
     {
         
@@ -33,6 +35,7 @@ public class ScreenTouch : MonoBehaviour
         mousePositionOnScreen = Input.mousePosition;
         if (Input.GetMouseButtonDown(0))//when left click the mouse.
         {
+            clickTime += 1;
             beeController.beePompUp();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayhit;
@@ -58,5 +61,7 @@ public class ScreenTouch : MonoBehaviour
         return DeviationSet;
     }
 
-
+    public int returnClickTime(){
+        return clickTime;
+    }
 }

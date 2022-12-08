@@ -1,17 +1,18 @@
 {
-    "NickName": "jeff",
-    "Age": "20",
+    "NickName": "JIACHEN",
+    "Age": "22",
     "Deviation": [
+        true,
+        true,
+        true,
+        true,
         false,
-        false,
-        false,
-        false,
-        false,
-        false,
+        true,
         false,
         false,
         false,
         false
     ],
-    "Score": 0
+    "Score": 5,
+    "ClickTime": 6
 }

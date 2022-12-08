@@ -6,11 +6,14 @@ public class BeeController : MonoBehaviour
 {
 
     public GameObject obj;
+    public GameObject audioSource;
     private Vector3 pos;
     private Vector3 posOnScreen;
     private GameObject instance;
+    private GameObject audioInstance;
     private float Speed=0.5f;
     private bool isClicked = false;
+    private bool isOnScreen = false;
     private Vector3 newPos = new Vector3(0,0,0);
     private Vector3 pos1 = new Vector3 (0,0,2.5f);
     private Vector3 pos2 = new Vector3 (1.77f,0,1.77f);
@@ -23,15 +26,18 @@ public class BeeController : MonoBehaviour
     private Vector3 pos7 = new Vector3 (1.77f,0,-1.5f);
 
     void Start()
-    {
-
-        instance = (GameObject)Instantiate(obj, generatePosition(), transform.rotation);
+    {   pos = generatePosition();
+        audioInstance = (GameObject)Instantiate(audioSource, pos, transform.rotation); 
     }
 
     void Update()
     {
         posOnScreen = Camera.main.WorldToScreenPoint(pos);
         if(isClicked){
+            if(isOnScreen == false){
+                instance = (GameObject)Instantiate(obj, pos, transform.rotation);
+                isOnScreen = true;
+            } 
             instance.transform.localPosition = Vector3.MoveTowards(instance.transform.localPosition, newPos, Speed*Time.deltaTime);
             if(instance.transform.position == newPos){
                 isClicked = false;
@@ -58,16 +64,18 @@ public class BeeController : MonoBehaviour
 
     public void destroyObject(){
         GameObject.Destroy(instance);
+        GameObject.Destroy(audioInstance);
+        isOnScreen = false;
     }
 
     public void beePompUp(){
-        
         newPos = new Vector3(pos.x, pos.y+2, pos.z);
         isClicked = true;
 
     }
 
     public void generateNewObject(){
-        instance = (GameObject)Instantiate(obj, generatePosition(), transform.rotation);
+        pos = generatePosition();
+        audioInstance = (GameObject)Instantiate(audioSource, pos, transform.rotation);
     }
 }
