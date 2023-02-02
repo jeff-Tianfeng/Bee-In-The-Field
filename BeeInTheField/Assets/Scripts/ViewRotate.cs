@@ -8,10 +8,18 @@ public class ViewRotate : MonoBehaviour
     public Camera mainCamera;
     public float sensitivetyKeyBoard = 0.1f;
 
+    private bool drag = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+    }
+
+    private void LateUpdate()
+    {
+
     }
 
     // Update is called once per frame
