@@ -27,6 +27,10 @@ public class ButtonStateRight : MonoBehaviour, IPointerDownHandler, IPointerUpHa
             if(isClick == true){
                 mainCamera.transform.Rotate(0, 0.99f * _speed * Time.deltaTime, 0, Space.Self);
             }
+        }else{
+            if(isClick == true){
+                mainCamera.transform.Rotate(0, -0.99f * _speed * Time.deltaTime, 0, Space.Self);
+            }
         }
     }
 }
