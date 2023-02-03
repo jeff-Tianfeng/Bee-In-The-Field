@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 797223583}
   - component: {fileID: 797223584}
   - component: {fileID: 797223585}
+  - component: {fileID: 797223586}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -345,7 +346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797223580}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfdd673ad94844189aeb66394bbb7652, type: 3}
   m_Name: 
@@ -363,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d053873ea9b46fd80bd0f8c0ef0867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionController: {fileID: 0}
+  instructionController: {fileID: 797223586}
   screenTouch: {fileID: 797223583}
 --- !u!114 &797223585
 MonoBehaviour:
@@ -378,6 +379,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataCollertor: {fileID: 797223584}
+--- !u!114 &797223586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797223580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864bcdb6a926c4e089b23b182ff367b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCollector: {fileID: 797223584}
+  name: {fileID: 0}
+  age: {fileID: 0}
 --- !u!1 &822758026
 GameObject:
   m_ObjectHideFlags: 0

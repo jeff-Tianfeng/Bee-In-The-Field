@@ -19,9 +19,12 @@ public class DataCollector : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        clickTime = screenTouch.returnClickTime();
-        deviation = screenTouch.returnDeviation();
+    { 
+        if(screenTouch != null)
+        {
+            clickTime = screenTouch.returnClickTime();
+            deviation = screenTouch.returnDeviation();
+        }
         score = ScreenTouch.returnScore();
     }
 

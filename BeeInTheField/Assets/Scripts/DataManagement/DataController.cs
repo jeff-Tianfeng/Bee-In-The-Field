@@ -21,9 +21,8 @@ public class DataController : MonoBehaviour
     private float t1;
     private float t2;
     private int totalTime = 11;
-    string JsonPath; //json文件的路径
-    PlayerPerformanceData playerPerformance;//要存起来的对象
-    //PlayerPerformanceData dayrangeMessagetemp;//要读取出来的对象
+    string JsonPath; //json file path
+    PlayerPerformanceData playerPerformance;//target to store
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +36,7 @@ public class DataController : MonoBehaviour
          t2 = Time.fixedTime;
           if(t2 - t1 >=totalTime - 1)
         {
-            JsonPath = Application.streamingAssetsPath + "/JsonTest.json";
+            JsonPath = Application.streamingAssetsPath + "/" + dataCollertor.returnName() + "JsonTest.json";
             InitJsonData();
             SaveJson();
         }
