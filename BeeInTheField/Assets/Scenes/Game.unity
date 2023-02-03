@@ -920,6 +920,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8080698007601854602, guid: fdbfa786db31347b78f2e5c6c357769d, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 9ab7873366dbc4865983c2f9476a18c9, type: 3}
+    - target: {fileID: 8997450975564063637, guid: fdbfa786db31347b78f2e5c6c357769d, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: acb28b78c29014035b269be4defa7231, type: 3}
     m_RemovedComponents:
     - {fileID: 910784565141568457, guid: fdbfa786db31347b78f2e5c6c357769d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fdbfa786db31347b78f2e5c6c357769d, type: 3}
