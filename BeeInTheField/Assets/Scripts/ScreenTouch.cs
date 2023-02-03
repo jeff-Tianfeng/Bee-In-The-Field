@@ -36,7 +36,6 @@ public class ScreenTouch : MonoBehaviour
         if (Input.GetMouseButtonDown(0))//when left click the mouse.
         {
             clickTime += 1;
-            beeController.beePompUp();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayhit;
             //check if game is pause, if pause then won't handle the click event.
@@ -47,6 +46,7 @@ public class ScreenTouch : MonoBehaviour
                     DeviationSet[collectTime1] = true;
                     collectTime1 = collectTime1 + 1;
                     score = score + 1;
+                    beeController.beePompUp();
                 }else{
                     Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + "Nothing");
                     DeviationSet[collectTime1] = false;
