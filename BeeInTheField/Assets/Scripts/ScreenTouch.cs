@@ -42,11 +42,16 @@ public class ScreenTouch : MonoBehaviour
             if(Time.timeScale == 1){
                 if (Physics.Raycast(ray, out rayhit))
                 {   
-                    Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + rayhit.collider.gameObject.name);
-                    DeviationSet[collectTime1] = true;
-                    collectTime1 = collectTime1 + 1;
-                    score = score + 1;
-                    beeController.beePompUp();
+
+                    Debug.Log("Object Position: "+beeController.returnScreenPosition().x + "Mouse Position: " + mousePositionOnScreen + rayhit.collider.gameObject.name);
+                   
+                    if( (System.Math.Abs(beeController.returnScreenPosition().x - mousePositionOnScreen.x)) <= 50 && (System.Math.Abs(beeController.returnScreenPosition().y - mousePositionOnScreen.y)<= 50))
+                    {
+                        DeviationSet[collectTime1] = true;
+                        collectTime1 = collectTime1 + 1;
+                        score = score + 1;
+                        beeController.beePompUp();
+                    }
                 }else{
                     Debug.Log("Object Position: "+beeController.returnScreenPosition() + "Mouse Position: " + mousePositionOnScreen + "Nothing");
                     DeviationSet[collectTime1] = false;
