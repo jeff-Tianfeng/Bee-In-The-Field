@@ -4,7 +4,6 @@
     "Deviation": [
         false,
         false,
-        true,
         false,
         false,
         false,
@@ -23,7 +22,8 @@
         false,
         false,
         false,
-        true,
+        false,
+        false,
         false,
         false,
         false,
@@ -53,6 +53,6 @@
         false,
         false
     ],
-    "Score": 2,
-    "ClickTime": 22
+    "Score": 0,
+    "ClickTime": 0
 }
