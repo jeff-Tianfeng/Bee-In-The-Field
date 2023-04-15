@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DataCollector : MonoBehaviour
-{
+{ 
+    [SerializeField]
     public InstructionController instructionController;
+    [SerializeField]
+    public MainMenuController mainMenuController;
     public ScreenTouch screenTouch;
     private string NickName;
     private string Age;
@@ -19,15 +22,18 @@ public class DataCollector : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        clickTime = screenTouch.returnClickTime();
-        deviation = screenTouch.returnDeviation();
+    { 
+        if(screenTouch != null)
+        {
+            clickTime = screenTouch.returnClickTime();
+            deviation = screenTouch.returnDeviation();
+        }
         score = ScreenTouch.returnScore();
     }
 
     public void record(){
-        PlayerPrefs.SetString("NickName", instructionController.returnName());
-        PlayerPrefs.SetString("Age", instructionController.retrunAge());
+        PlayerPrefs.SetString("NickName", mainMenuController.returnName());
+        PlayerPrefs.SetString("Age", mainMenuController.retrunAge());
     }
 
     public string returnName(){

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 
@@ -20,10 +21,11 @@ public class DataController : MonoBehaviour
     public DataCollector dataCollertor;
     private float t1;
     private float t2;
-    private int totalTime = 11;
-    string JsonPath; //json文件的路径
-    PlayerPerformanceData playerPerformance;//要存起来的对象
-    //PlayerPerformanceData dayrangeMessagetemp;//要读取出来的对象
+    
+    private int totalTime = 118;
+    string JsonPath; //json file path
+    PlayerPerformanceData playerPerformance;//target to store
+    private bool threadBlocker = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +36,11 @@ public class DataController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         t2 = Time.fixedTime;
-          if(t2 - t1 >=totalTime - 1)
+        t2 = Time.fixedTime;
+        if(t2 >= totalTime && threadBlocker == false)
         {
-            JsonPath = Application.streamingAssetsPath + "/JsonTest.json";
+            threadBlocker = true;
+            JsonPath = Application.streamingAssetsPath + "/" + dataCollertor.returnName() + "JsonTest.json";
             InitJsonData();
             SaveJson();
         }
@@ -62,5 +65,6 @@ public class DataController : MonoBehaviour
             sw.Close();
             sw.Dispose();
         }
+        SceneManager.LoadScene(3);
     }
 }
