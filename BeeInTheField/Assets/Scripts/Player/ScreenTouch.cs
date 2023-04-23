@@ -45,7 +45,7 @@ public class ScreenTouch : MonoBehaviour
 
                     Debug.Log("Object Position: "+beeController.returnScreenPosition().x + "Mouse Position: " + mousePositionOnScreen + rayhit.collider.gameObject.name);
                    
-                    if( (System.Math.Abs(beeController.returnScreenPosition().x - mousePositionOnScreen.x)) <= 50 && (System.Math.Abs(beeController.returnScreenPosition().y - mousePositionOnScreen.y)<= 50))
+                    if( (System.Math.Abs(beeController.returnScreenPosition().x - mousePositionOnScreen.x)) <= 100 && (System.Math.Abs(beeController.returnScreenPosition().y - mousePositionOnScreen.y)<= 100))
                     {
                         DeviationSet[collectTime1] = true;
                         collectTime1 = collectTime1 + 1;

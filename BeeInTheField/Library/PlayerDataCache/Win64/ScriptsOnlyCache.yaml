@@ -320,7 +320,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3746}
     - Class: 114
-      Script: {instanceID: 69180}
+      Script: {instanceID: 25762}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -942,4 +942,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Game.unity
   - Assets/Scenes/GameOver.unity
   - Assets/Scenes/Instruction.unity
-  playerPath: F:/GAME/Bee_In_The_Field/BeeInTheField.exe
+  playerPath: C:/Users/27996/Desktop/Bee-In-The-Field/GameForWindows/BeeInTheField.exe
